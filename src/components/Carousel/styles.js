@@ -6,8 +6,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 400px;
+  height: 100%;
+  grid-area: Carousel;
 
   & svg {
     position: absolute;
@@ -32,7 +32,6 @@ export const Images = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 0.5rem;
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
   translate: ${({ $slide }) => `${-100 * $slide}%`};
   object-fit: cover;

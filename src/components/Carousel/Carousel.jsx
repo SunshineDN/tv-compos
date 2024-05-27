@@ -12,10 +12,16 @@ const Carousel = ({ slides }) => {
     setSlide((slide - 1 + slides.length) % slides.length);
   };
 
-  const interval = setInterval(nextSlide, 5000);
-  useEffect(() => {
-    return () => clearInterval(interval);
-  }, [interval]);
+  // const timer = setTimeout(() => {
+  //   nextSlide();
+  // }, 5000);
+
+  // useEffect(() => {
+  //   if (timer >= 1000) {
+  //     window.location.reload();
+  //   }
+  //   return () => clearTimeout(timer);
+  // }, [timer]);
 
   return (
     <S.Container>
