@@ -1,15 +1,31 @@
 {
   "slides": [
     {
-      "url": "https://picsum.photos/seed/img1/600/400",
+      "url": "src/assets/Fofoca.png",
       "alt": "Image 1"
     },
     {
-      "url": "https://picsum.photos/seed/img2/600/400",
+      "url": "src/assets/Reduza barulhos_.png",
       "alt": "Image 2"
     },
     {
-      "url": "https://picsum.photos/seed/img3/600/400",
+      "url": "src/assets/Resolva_Conflitos.png",
+      "alt": "Image 3"
+    },
+    {
+      "url": "src/assets/Respeito.png",
+      "alt": "Image 3"
+    },
+    {
+      "url": "src/assets/sala_de_convivencia.png",
+      "alt": "Image 3"
+    },
+    {
+      "url": "src/assets/Sobre a Copa_Aviso.png",
+      "alt": "Image 3"
+    },
+    {
+      "url": "src/assets/Trabalhar_Em_Equipe.png",
       "alt": "Image 3"
     }
   ]

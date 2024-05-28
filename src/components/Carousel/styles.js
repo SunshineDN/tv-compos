@@ -6,8 +6,9 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  grid-area: Carousel;
+  min-height: 768px;
+  background-color: #808080;
+  flex: 1;
 
   & svg {
     position: absolute;
@@ -32,9 +33,10 @@ export const Images = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.2); */
   translate: ${({ $slide }) => `${-100 * $slide}%`};
   object-fit: cover;
+  /* object-fit: cover; */
   flex-shrink: 0;
   flex-grow: 0;
   transition: translate 0.5s ease-in-out;
