@@ -4,6 +4,8 @@ export const GlobalStyles = createGlobalStyle`
   body, * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
   }
 `;
