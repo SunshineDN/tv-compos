@@ -1,7 +1,10 @@
 import axios from 'axios';
 
 export const getWeather = async () => {
-  const { data } = await axios.get('https://api.open-meteo.com/v1/forecast?latitude=-12.9711&longitude=-38.5108&current=temperature_2m,is_day,rain,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=America%2FSao_Paulo');
+  const lat = -12.9836;
+  const lon = -38.4588;
+  const URL = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,is_day,rain,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=America%2FSao_Paulo`;
+  const { data } = await axios.get(URL);
   const { current, daily } = data;
   const { temperature_2m, is_day, weather_code } = current;
   const { temperature_2m_max, temperature_2m_min, weather_code: dailyWeatherCode, time } = daily;

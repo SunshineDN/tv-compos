@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const URL = 'https://compos.net.br/backend/media';
+// const URL = 'https://compos.net.br/backend/media';
+const URL = 'https://compos.aiatende.com.br/media';
 // const URL = import.meta.env.API_URL_MEDIA || 'http://localhost:3000/media';
 
 const verifyType = (filename) => {
