@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = import.meta.env.API_URL || 'http://localhost:3000/spreadsheet';
+const URL = import.meta.env.API_URL || 'https://compos.net.br/backend/spreadsheet';
 
 export const getNotices = async () => {
   const { data } = await axios.get(`${URL}/getNotices`);

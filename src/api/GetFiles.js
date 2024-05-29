@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = import.meta.env.API_URL_MEDIA || 'http://localhost:3000/media';
+const URL = import.meta.env.API_URL_MEDIA || 'https://compos.net.br/backend/media';
 
 const verifyType = (filename) => {
   if (/\.(jpg|jpeg|png|gif)$/i.test(filename)) {
