@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { CircleChevronLeft as LeftArrow, CircleChevronRight as RightArrow } from 'lucide-react';
 
 export const Container = styled.div`
   position: relative;
@@ -59,13 +58,13 @@ export const Video = styled.video.attrs({
   transition: translate 0.5s ease-in-out;
 `;
 
-export const CircleChevronLeft = styled(LeftArrow)`
-  left: 1rem;
-`;
+// export const CircleChevronLeft = styled(LeftArrow)`
+//   left: 1rem;
+// `;
 
-export const CircleChevronRight = styled(RightArrow)`
-  right: 1rem;
-`;
+// export const CircleChevronRight = styled(RightArrow)`
+//   right: 1rem;
+// `;
 
 export const Span = styled.span`
   display: flex;
