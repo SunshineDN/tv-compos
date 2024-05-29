@@ -1,14 +1,15 @@
 import Sidebar from './components/Sidebar/Sidebar';
 import Carousel from './components/Carousel/Carousel';
 import NoticeBar from './components/NoticeBar/NoticeBar';
-import { slides } from './data/carouselDatas.json';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
+import { getFilenames } from './api/GetFiles';
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 const MainContent = styled.div`
@@ -19,12 +20,21 @@ const MainContent = styled.div`
 `;
 
 function App() {
+  const [filenames, setFilenames] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getFilenames();
+      setFilenames(response);
+    };
+    fetchData();
+  }, []);
 
   return (
     <Container>
       <Sidebar />
       <MainContent>
-        <Carousel slides={slides} />
+        <Carousel slides={filenames} />
         <NoticeBar />
       </MainContent>
     </Container>

@@ -1,31 +1,48 @@
+import { useEffect, useState } from 'react';
 import * as S from './styles';
+import DateHour from './DateHour';
+import { getNotices } from '../../api/Spreadsheets';
+
 
 const NoticeBar = () => {
+  const [ noticeIndex, setNoticeIndex ] = useState(0);
+  const [ notices, setNotices ] = useState([]);
+
+  useEffect(() => {
+    const fetchNotices = async () => {
+      const response = await getNotices();
+      setNotices(response);
+    };
+    fetchNotices();
+  }, []);
+
+  
+  const changeNotice = () => {
+    setNoticeIndex((noticeIndex + 1) % notices.length);
+  };
+
+  const timer = setTimeout(() => {
+    console.log(notices);
+    changeNotice();
+  }, 15000);
+  
+  useEffect(() => {
+    console.log('useEffect');
+    return () => clearTimeout(timer);
+  }, [timer]);
+
   return (
     <S.Container>
       <S.NoticeDateWrapper>
-        <S.DateContainer>
-          <S.DateHourMonthContainer>
-            <S.DateMonth>
-              <S.Date>
-                17
-              </S.Date>
-              <S.Month>
-                MAIO
-              </S.Month>
-            </S.DateMonth>
-            <S.Hour>
-              13h:42
-            </S.Hour>
-          </S.DateHourMonthContainer>
-        </S.DateContainer>
-
+        <DateHour />
         <S.NoticeTitleDescription>
           <S.NoticeTitle>ÚLTIMAS NOTÍCIAS</S.NoticeTitle>
-          <S.DescriptionWrapper>
-            <S.DescriptionTitle>Confira os 5 golpes do PIX mais comuns feitos pelo celular</S.DescriptionTitle>
-            <S.Description>Federação Brasileira de Bancos (Febraban) divulgou os 5 principais truques cibernéticos que os bandidos usam para induzir as vítimas a realizar o pagamento. Veja dicas para se proteger.</S.Description>
-          </S.DescriptionWrapper>
+          {notices.map((notice, index) => (
+            <S.DescriptionWrapper key={index} $visible={ index === noticeIndex ? 'flex' : 'none'}>
+              <S.DescriptionTitle>{notice.titulo}</S.DescriptionTitle>
+              <S.Description>{notice.descricao}</S.Description>
+            </S.DescriptionWrapper>
+          ))}
         </S.NoticeTitleDescription>
       </S.NoticeDateWrapper>
     </S.Container>

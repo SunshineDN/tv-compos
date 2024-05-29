@@ -1,32 +1,44 @@
 {
   "slides": [
     {
+      "url": "src/assets/SalaCopa_Aviso.mp4",
+      "alt": "Video 1",
+      "type": "video"
+    },
+    {
       "url": "src/assets/Fofoca.png",
-      "alt": "Image 1"
+      "alt": "Image 1",
+      "type": "image"
     },
     {
       "url": "src/assets/Reduza barulhos_.png",
-      "alt": "Image 2"
+      "alt": "Image 2",
+      "type": "image"
     },
     {
       "url": "src/assets/Resolva_Conflitos.png",
-      "alt": "Image 3"
+      "alt": "Image 3",
+      "type": "image"
     },
     {
       "url": "src/assets/Respeito.png",
-      "alt": "Image 3"
+      "alt": "Image 4",
+      "type": "image"
     },
     {
       "url": "src/assets/sala_de_convivencia.png",
-      "alt": "Image 3"
+      "alt": "Image 5",
+      "type": "image"
     },
     {
       "url": "src/assets/Sobre a Copa_Aviso.png",
-      "alt": "Image 3"
+      "alt": "Image 6",
+      "type": "image"
     },
     {
       "url": "src/assets/Trabalhar_Em_Equipe.png",
-      "alt": "Image 3"
+      "alt": "Image 7",
+      "type": "image"
     }
   ]
 }

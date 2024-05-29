@@ -1,12 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: stretch;
   padding: 10px 25px;
   background-color: #CDCDCD;
   width: 100%;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
 `;
 
 export const NoticeDateWrapper = styled.div`
@@ -24,7 +34,7 @@ export const NoticeTitle = styled.div`
   position: relative;
   padding: 5px 12px;
   width: 100%;
-  max-width: 280px;
+  max-width: 300px;
   background-color: #808080;
 
   font-size: 1.5rem;
@@ -43,25 +53,29 @@ export const NoticeTitle = styled.div`
 `;
 
 export const DescriptionWrapper = styled.div`
-  display: flex;
+  display: ${({ $visible }) => $visible};
   flex-direction: column;
   align-items: flex-start;
   flex: 1;
   background-color: #F5F5F5;
   padding: 1rem;
   gap: 5px 0;
+  min-height: 7.4rem;
 `;
 
 export const DescriptionTitle = styled.h2`
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #C8102E;
+  animation: ${fadeIn} 2.5s;
+
 `;
 
 export const Description = styled.p`
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #151515;
+  animation: ${fadeIn} 2.5s;
 `;
 
 export const DateContainer = styled.div`
@@ -88,6 +102,7 @@ export const DateHourMonthContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
   gap: 10px 0;
 `;
@@ -103,6 +118,7 @@ export const Date = styled.div`
 `;
 
 export const Month = styled.div`
+  text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 500;
   transform: rotate(-90deg);
@@ -111,6 +127,6 @@ export const Month = styled.div`
 `;
 
 export const Hour = styled.div`
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
 `;

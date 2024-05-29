@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 768px;
+  min-height: 35rem;
   background-color: #808080;
   flex: 1;
 
@@ -42,6 +42,23 @@ export const Image = styled.img`
   transition: translate 0.5s ease-in-out;
 `;
 
+export const Video = styled.video.attrs({
+  autoPlay: true,
+  muted: true,
+  loop: true,
+  playsInline: true
+})`
+  width: 100%;
+  height: 100%;
+  /* box-shadow: 0 0 7px rgba(0, 0, 0, 0.2); */
+  translate: ${({ $slide }) => `${-100 * $slide}%`};
+  object-fit: cover;
+  /* object-fit: cover; */
+  flex-shrink: 0;
+  flex-grow: 0;
+  transition: translate 0.5s ease-in-out;
+`;
+
 export const CircleChevronLeft = styled(LeftArrow)`
   left: 1rem;
 `;
@@ -58,8 +75,8 @@ export const Span = styled.span`
 `;
 
 export const Button = styled.span`
-  width: .5rem !important;
-  height: .5rem !important;
+  width: 1rem !important;
+  height: 1rem !important;
   border-radius: 100%;
   border: none;
   background-color: white;
