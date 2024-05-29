@@ -1,8 +1,8 @@
-# React + Vite
+# SlideTV - .Compos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## APIs utilizadas:
+> * Open-meteo.com;
+  * Google Spreadsheet API;
+  * Get Media Files (Own);
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Aplicação feita utilizando React + Vite para melhor otimização de processos e vizualização de componentes. Para estilização foi usado a biblioteca *styled-components*.
