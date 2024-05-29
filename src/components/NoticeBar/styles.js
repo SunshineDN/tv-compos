@@ -61,6 +61,7 @@ export const DescriptionWrapper = styled.div`
   padding: 1rem;
   gap: 5px 0;
   min-height: 7.4rem;
+  width: 100%;
 `;
 
 export const DescriptionTitle = styled.h2`
