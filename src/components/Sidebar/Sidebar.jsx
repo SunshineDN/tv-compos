@@ -99,8 +99,8 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await getWeather();
-      setCurrent(data.current);
-      setDaily(data.daily);
+      setCurrent(data?.current);
+      setDaily(data?.daily);
     };
     fetchData();
   }, []);
@@ -114,23 +114,23 @@ const Sidebar = () => {
         </S.TextWrapper>
 
         <S.WeatherWrapper>
-          <S.WeatherIcon src={IdentifyWeatherIcon(current.weather_code, current.isDay)} />
-          <S.WeatherStatus>{current.weatherStatus}</S.WeatherStatus>
+          <S.WeatherIcon src={IdentifyWeatherIcon(current?.weather_code, current?.isDay)} />
+          <S.WeatherStatus>{current?.weatherStatus}</S.WeatherStatus>
         </S.WeatherWrapper>
 
-        <S.WeatherTemperature>{current.temperature}°</S.WeatherTemperature>
+        <S.WeatherTemperature>{current?.temperature}°</S.WeatherTemperature>
       </S.StatusDay>
 
       <S.BarWeather>
-        {daily.map((day, index) => {
+        {daily?.map((day, index) => {
           if (index === 0 || index === 6 || index === 7) {
             return;
           } else {
             return (
               <S.StatusNextDay key={index}>
-                <S.NextDayTitle>{day.weekDay}</S.NextDayTitle>
-                <S.NextDayWeatherIcon src={IdentifyWeatherIcon(day.weatherCode, current.isDay)} />
-                <S.NextDayWeatherTemperature>{day.average}°</S.NextDayWeatherTemperature>
+                <S.NextDayTitle>{day?.weekDay}</S.NextDayTitle>
+                <S.NextDayWeatherIcon src={IdentifyWeatherIcon(day?.weatherCode, current?.isDay)} />
+                <S.NextDayWeatherTemperature>{day?.average}°</S.NextDayWeatherTemperature>
               </S.StatusNextDay>
             );
           }

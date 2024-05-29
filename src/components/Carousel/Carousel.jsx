@@ -28,11 +28,11 @@ const Carousel = ({ slides }) => {
     <S.Container>
       {/* <S.CircleChevronLeft size={32} onClick={prevSlide} /> */}
         <S.Images>
-          {slides.map((image, index) => (
-            (image.type === 'image' ? (
-              <S.Image key={index} src={image.url} alt={image.alt} $slide={slide} />
+          {slides?.map((image, index) => (
+            (image?.type === 'image' ? (
+              <S.Image key={index} src={image?.url} alt={image?.alt} $slide={slide} />
             ) : (
-              <S.Video ref={videoRef} key={index} src={image.url} alt={image.alt} $slide={slide} />
+              <S.Video ref={videoRef} key={index} src={image?.url} alt={image?.alt} $slide={slide} />
             ))
           ))}
         </S.Images>

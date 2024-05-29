@@ -15,22 +15,22 @@ const Statistic = () => {
 
   return (
     <S.StatisticsWrapper>
-      {statistics.map((statistic, index) => {
+      {statistics?.map((statistic, index) => {
         if (statistic.titulo.includes('Meta')) {
           return (
             <S.Statistics $margin={'1.5rem 0 0 0'} key={index}>
-              <S.StatisticsTitle $bold={600}>{statistic.titulo}</S.StatisticsTitle>
+              <S.StatisticsTitle $bold={600}>{statistic?.titulo}</S.StatisticsTitle>
               <S.StatisticsBarValue>
-                <S.StatisticsBar $value={statistic.valor} />
-                <S.StatisticsValue $bold={600}>{statistic.valor}%</S.StatisticsValue>
+                <S.StatisticsBar $value={statistic?.valor} />
+                <S.StatisticsValue $bold={600}>{statistic?.valor}%</S.StatisticsValue>
               </S.StatisticsBarValue>
             </S.Statistics>
           );
         } else {
           return (
             <S.Statistics $flex_d={'row'} $align={'center'} $justify={'space-between'} key={index}>
-              <S.StatisticsTitle>{statistic.titulo}</S.StatisticsTitle>
-              <S.StatisticsValue>{statistic.valor}</S.StatisticsValue>
+              <S.StatisticsTitle>{statistic?.titulo}</S.StatisticsTitle>
+              <S.StatisticsValue>{statistic?.valor}</S.StatisticsValue>
             </S.Statistics>
           );
         }

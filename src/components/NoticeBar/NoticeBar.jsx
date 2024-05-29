@@ -37,10 +37,10 @@ const NoticeBar = () => {
         <DateHour />
         <S.NoticeTitleDescription>
           <S.NoticeTitle>ÚLTIMAS NOTÍCIAS</S.NoticeTitle>
-          {notices.map((notice, index) => (
+          {notices?.map((notice, index) => (
             <S.DescriptionWrapper key={index} $visible={ index === noticeIndex ? 'flex' : 'none'}>
-              <S.DescriptionTitle>{notice.titulo}</S.DescriptionTitle>
-              <S.Description>{notice.descricao}</S.Description>
+              <S.DescriptionTitle>{notice?.titulo}</S.DescriptionTitle>
+              <S.Description>{notice?.descricao}</S.Description>
             </S.DescriptionWrapper>
           ))}
         </S.NoticeTitleDescription>
