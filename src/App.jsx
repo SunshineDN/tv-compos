@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Sidebar from './components/Sidebar/Sidebar';
 import Carousel from './components/Carousel/Carousel';
 import NoticeBar from './components/NoticeBar/NoticeBar';
@@ -22,12 +23,17 @@ const MainContent = styled.div`
 function App() {
   const [filenames, setFilenames] = useState([]);
 
+  const timer = setTimeout(() => {
+    window.location.reload();
+  }, 300000);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await getFilenames();
       setFilenames(response);
     };
     fetchData();
+    return () => clearTimeout(timer);
   }, []);
 
   return (

@@ -15,12 +15,9 @@ const Carousel = ({ slides }) => {
 
   const timer = setTimeout(() => {
     nextSlide();
-  }, 15000);
+  }, 12000);
 
   useEffect(() => {
-    if (timer >= 1000) {
-      window.location.reload();
-    }
     return () => clearTimeout(timer);
   }, [timer, slides, slide]);
 

@@ -23,7 +23,7 @@ const NoticeBar = () => {
 
   const timer = setTimeout(() => {
     changeNotice();
-  }, 15000);
+  }, 12000);
   
   useEffect(() => {
     return () => clearTimeout(timer);
