@@ -97,7 +97,7 @@ export const NextDayWeatherTemperature = styled.p`
 export const StatisticsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px 0;
+  gap: 12px 0;
   width: 100%;
 `;
 
@@ -110,7 +110,7 @@ export const Statistics = styled.div`
 `;
 
 export const StatisticsTitle = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: ${({ $bold }) => $bold || 400};
 `;
 
@@ -141,7 +141,7 @@ export const StatisticsBar = styled.div`
 `;
 
 export const StatisticsValue = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: ${({ $bold }) => $bold || 400};
 `;
 

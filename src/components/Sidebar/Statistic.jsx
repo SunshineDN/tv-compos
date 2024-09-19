@@ -16,9 +16,9 @@ const Statistic = () => {
   return (
     <S.StatisticsWrapper>
       {statistics?.map((statistic, index) => {
-        if (statistic.titulo.includes('Meta')) {
+        if (statistic.titulo.includes('Atendimento') || statistic.titulo.includes('Meta')) {
           return (
-            <S.Statistics $margin={'1.5rem 0 0 0'} key={index}>
+            <S.Statistics $margin={'1rem 0 1.5rem 0'} key={index}>
               <S.StatisticsTitle $bold={600}>{statistic?.titulo}</S.StatisticsTitle>
               <S.StatisticsBarValue>
                 <S.StatisticsBar $value={statistic?.valor} />
@@ -27,12 +27,20 @@ const Statistic = () => {
             </S.Statistics>
           );
         } else {
-          return (
-            <S.Statistics $flex_d={'row'} $align={'center'} $justify={'space-between'} key={index}>
-              <S.StatisticsTitle>{statistic?.titulo}</S.StatisticsTitle>
-              <S.StatisticsValue>{statistic?.valor}</S.StatisticsValue>
-            </S.Statistics>
-          );
+          if (statistic?.valor === '-'){
+            return (
+              <S.Statistics $flex_d={'row'} $align={'center'} $justify={'space-between'} key={index}>
+                <S.StatisticsTitle $bold={600}>{statistic?.titulo}</S.StatisticsTitle>
+              </S.Statistics>
+            );
+          } else {
+            return (
+              <S.Statistics $flex_d={'row'} $align={'center'} $justify={'space-between'} key={index}>
+                <S.StatisticsTitle>{statistic?.titulo}</S.StatisticsTitle>
+                <S.StatisticsValue>{statistic?.valor}</S.StatisticsValue>
+              </S.Statistics>
+            );
+          }
         }
       })}
     </S.StatisticsWrapper>
